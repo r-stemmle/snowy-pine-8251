@@ -21,21 +21,6 @@ ActiveRecord::Schema.define(version: 2021_04_21_174117) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "doctor_surgeries", force: :cascade do |t|
-    t.bigint "doctor_id"
-    t.bigint "surgery_id"
-    t.index ["doctor_id"], name: "index_doctor_surgeries_on_doctor_id"
-    t.index ["surgery_id"], name: "index_doctor_surgeries_on_surgery_id"
-  end
-
-  create_table "doctors", force: :cascade do |t|
-    t.string "name"
-    t.integer "years_practiced"
-    t.string "uni"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "flights", force: :cascade do |t|
     t.string "number"
     t.string "date"
@@ -45,15 +30,5 @@ ActiveRecord::Schema.define(version: 2021_04_21_174117) do
     t.index ["airline_id"], name: "index_flights_on_airline_id"
   end
 
-  create_table "surgeries", force: :cascade do |t|
-    t.string "title"
-    t.string "day"
-    t.integer "room"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "doctor_surgeries", "doctors"
-  add_foreign_key "doctor_surgeries", "surgeries"
   add_foreign_key "flights", "airlines"
 end
