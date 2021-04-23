@@ -4,7 +4,7 @@
 
 <div class="passengers">
   <ul>
-    <% @airline.passengers.each do |passenger| %>
+    <% @airline.passengers.distinct.each do |passenger| %>
     <li><%= passenger.name %></li>
     <% end %>
   </ul>
