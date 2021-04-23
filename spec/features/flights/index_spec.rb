@@ -12,7 +12,8 @@ RSpec.describe "Flight Index Page" do
       f4 = united.flights.create!(number: 777, date: '2021-05-21', departure_city: 'Denver', arrival_city: 'Reno')
       f5 = united.flights.create!(number: 888, date: '2021-04-29', departure_city: 'Denver', arrival_city: 'Reno')
       f6 = twa.flights.create!(number: 999, date: '2021-05-11', departure_city: 'Denver', arrival_city: 'Reno')
-
+      p1 = Passenger.create!(name: 'Ryan', age: 36)
+      
       visit flights_path
 save_and_open_page
       expect(page).to have_content(f1.number)
