@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     resources :flights, only: [:index]
   end
 
-  resources :flights, only: [:index]
+  resources :flights, only: [:index, :update]
 end
