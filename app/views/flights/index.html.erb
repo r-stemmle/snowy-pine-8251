@@ -3,8 +3,8 @@
 <div class="all-flights">
   <ul>
     <% @flights.each do |flight| %>
-    <li> <%= flight.number %> <%= flight.airline.name %><br>
-         <%=  %>
+    <li> <%= flight.number %> <%= flight.airline.name %>
+         <p><% flight.passengers.each do |p| %> <%= p.name %>---<% end %></p>
      </li>
     <% end %>
   </ul>
